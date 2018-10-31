@@ -5,6 +5,10 @@ import {
   CardTitle, CardSubtitle, Button, CardFooter
 } from 'reactstrap';
 
+import logo from '../1.png';
+import Rating from 'react-star-ratings';
+
+
 const Game = props => {
   function handleSubmit() {
     props.onClick({
@@ -17,19 +21,20 @@ const Game = props => {
     });
   }
 
+
   return (
     
-        <Col xs="6">
+    <Col xs="6">
     <Card id="size">
     <CardImg top width="100%" src={props.url.image} alt={props.url.title} />
-  <CardBody>
-    <CardTitle>{props.url.title}</CardTitle>
+  <CardBody id="CardBody">
+    <CardTitle id="gametitle">{props.url.title}</CardTitle>
     {/* <CardSubtitle id="Link">{props.url.link}</CardSubtitle> */}
-    <CardText id="Release Date"> Release Date: {props.url.releaseDate}</CardText>
-    <CardText id="Original Price">Original Price: ${props.url.OriginalPrice}</CardText>
-    <CardText id="Rating">{props.url.ratings}</CardText>
+    <CardText id="ReleaseDate"> Release Date: {props.url.releaseDate}</CardText>
+    <CardText id="OriginalPrice">Original Price: ${props.url.OriginalPrice}</CardText>
+    <Rating id="Rating">  {props.url.ratings}</Rating>
   </CardBody>
-  <CardFooter>
+  <CardFooter id="cardfooter">
     <Button id="save_btn"onClick={handleSubmit}>Save</Button>
     <Button id="read-btn" href={props.url.link} target="_blank">Read More</Button>
   </CardFooter>

@@ -6,3 +6,43 @@
   font-size: 20px;
   margin-right: 15px;
 }
+
+#Logo {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+
+#Background {
+  background-color: black;
+}
+
+#Title {
+  color: whitesmoke;
+}
+
+#CardBody {
+  background-color: black;
+  color: whitesmoke;
+}
+
+#size {
+  border-color: red;
+}
+
+#ReleaseDate {
+  font-size: 20px;
+}
+
+#gametitle {
+  font-size: 30px;
+}
+
+#save_btn {
+  margin-right: 30px;
+}
+
+#cardfooter {
+  background-color: black;
+  border-color: red;
+}

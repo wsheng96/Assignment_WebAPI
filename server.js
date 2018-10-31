@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const db = require("./config/Key").mongoURI ;
-const route = require('./routes/route');
 const axios =require('axios');
 const cors = require('cors');
 
@@ -26,7 +25,8 @@ app.get('/getgame', (req, res) => {
       res.status(200).json(response);
     })
     .catch(function(error) {
-      console.log(error);
+      res.send(error);
+      res.status(404).json(error);
     });
 });
 
@@ -49,6 +49,7 @@ app.get('/getgame', (req, res) => {
        res.status(200),json(game);
      })
      .catch (error => {
+        res.send(error);
        res.status(404).json(error);
      })
    })
@@ -59,7 +60,7 @@ app.get('/getgame', (req, res) => {
       link: req.body.link,
       image: req.body.image,
       releaseDate: req.body.releaseDate,
-      originalPrice: req.body.originalPrice,
+      originalPrice: req.body.OriginalPrice,
       ratings: req.body.ratings
      }];
      console.log(array);
@@ -69,6 +70,7 @@ app.get('/getgame', (req, res) => {
         res.status(200).json(res);
      })
      .catch (error => {
+       res.send(error);
        res.status(404).json(error);
      });
    })
@@ -85,6 +87,7 @@ app.get('/getgame', (req, res) => {
       res.status(200).json(res);
     })
     .catch(err=>{
+      res.send(err);
       res.status(400).json(err);
     });
   })

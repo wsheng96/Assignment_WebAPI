@@ -15,7 +15,7 @@ const SavedGame = props => {
   return (
     <div>
       <Container>
-        <h1>Saved Games</h1>
+        <h1 id="Title">Saved Games</h1>
       </Container>
       <Container>
       <Row>{res}</Row>

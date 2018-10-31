@@ -15,7 +15,7 @@ const Home = props => {
   return (
     <div>
       <Container>
-        <h1>Latest Games</h1>
+        <h1 id="Title">Latest Crack Games</h1>
       </Container>
       <Container>
       <Row>{res}</Row>

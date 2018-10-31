@@ -43,18 +43,47 @@ class App extends Component {
       });
   }
 
+  componentDidUpdate() {
+    axios
+      .get('http://localhost:5000/getgame')
+      .then(response => {
+        this.setState({
+          games: response.data
+        });
+      })
+      .catch(error => {
+        alert(error);
+      });
+      axios
+      .get('http://localhost:5000/getsavedgames')
+      .then(response => {
+        this.setState({
+          saved: response.data
+        });
+      })
+      .catch(error => {
+        alert(error);
+      });
+  }
+
   handleSubmit(gameData) {
     console.log(gameData);
     axios
       .post('http://localhost:5000/getsavedgames',gameData)
+      .then(res => {
+        alert("Game Saved")
+      })
       .catch(error => {
-        alert('Saved');
+        console.log("error")
       });
   }
 
   handleDelete(title) {
     console.log(title);
     axios.post('http://localhost:5000/getsavedgames/delete',title)
+    .then(res => {
+      alert("Game Deleted")
+    })
     .catch(error => {
       window.location.reload();
     });
@@ -63,7 +92,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div id="Background">
           <AppNavBar />
           <Route
             exact

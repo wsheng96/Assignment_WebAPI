@@ -10,6 +10,8 @@ import {
   Container
 } from 'reactstrap';
 
+import Logo from './1.png';
+
 class AppNavbar extends Component {
   state = {
     isOpen: false
@@ -26,17 +28,22 @@ class AppNavbar extends Component {
       <div>
         <Navbar color="dark" dark expand="sm" className="mb-5">
           <Container>
-            <NavbarBrand href="/" id='NavTitle'>Game List</NavbarBrand>
+            <img src= {Logo} id = "Logo" />
+            <NavbarBrand href="/" id="NavTitle">
+              Game List
+            </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="/" to="/" id = 'HomeBtn'>
+                  <NavLink href="/" to="/" id="HomeBtn">
                     Home
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/saved" id = 'HomeBtn'>Favourite</NavLink>
+                  <NavLink href="/saved" id="HomeBtn">
+                    Favourite
+                  </NavLink>
                 </NavItem>
               </Nav>
             </Collapse>
