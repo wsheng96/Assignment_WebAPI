@@ -5,6 +5,8 @@ import {
   CardTitle, CardSubtitle, Button, CardFooter
 } from 'reactstrap';
 
+import Rating from 'react-star-ratings';
+
 const SavedItems= props => {
   function handleDelete() {
     props.onClick({
@@ -22,7 +24,7 @@ const SavedItems= props => {
     {/* <CardSubtitle id="Link">{props.url.link}</CardSubtitle> */}
     <CardText id="ReleaseDate"> Release Date: {props.url.releaseDate}</CardText>
     <CardText id="OriginalPrice"> Original Price: ${props.url.originalPrice}</CardText>
-    <CardText id="Rating">{props.url.ratings}</CardText>
+    <Rating id="Rating" rating = {props.url.ratings/20} numberOfStars = {5} starRatedColor = "gold"/>
   </CardBody>
   <CardFooter id="cardfooter">
     <Button id="save_btn"onClick={handleDelete}>Remove</Button>

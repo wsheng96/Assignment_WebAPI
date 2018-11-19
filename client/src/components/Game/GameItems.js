@@ -32,7 +32,7 @@ const Game = props => {
     {/* <CardSubtitle id="Link">{props.url.link}</CardSubtitle> */}
     <CardText id="ReleaseDate"> Release Date: {props.url.releaseDate}</CardText>
     <CardText id="OriginalPrice">Original Price: ${props.url.OriginalPrice}</CardText>
-    <Rating id="Rating">  {props.url.ratings}</Rating>
+    <Rating id="Rating" rating = {props.url.ratings/20} numberOfStars = {5} starRatedColor = "gold"/>
   </CardBody>
   <CardFooter id="cardfooter">
     <Button id="save_btn"onClick={handleSubmit}>Save</Button>

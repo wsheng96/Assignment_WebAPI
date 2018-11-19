@@ -7,6 +7,7 @@ const cors = require('cors');
 
 const app = express();
 const Item = require('./models/Item');
+const signinAPI = require('./routes/api/signin'); //Sign in API
 
 //body parser + Cors
 app.use(cors());
@@ -30,6 +31,20 @@ app.get('/getgame', (req, res) => {
     });
 });
 
+//News API Key
+//News Api Get
+const apiKey = '81d32b01c66a4e208bbcd2f38a6f3888';
+const url2 = `https://newsapi.org/v2/top-headlines?sources=ign&apiKey=${apiKey}`;
+
+app.get('/getNews', (req, res) => {
+  axios.get(url2)
+    .then((response) => {
+      res.send(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+});
 //Connect to mongooseDB
  mongoose
   .connect(

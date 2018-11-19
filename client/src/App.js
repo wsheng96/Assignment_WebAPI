@@ -4,6 +4,7 @@ import AppNavBar from './components/navBar';
 import Game from './components/Game/Game';
 import SaveGame from './components/SavedGame/SavedGame';
 // import About from './components/body';
+import Home from './components/Home/Home';
 
 import axios from 'axios';
 import './App.css';
@@ -107,6 +108,12 @@ class App extends Component {
               <SaveGame item={this.state.saved} onClick={this.handleDelete} />
             )}
           />
+          <Route
+            path="/login"
+            render={() => (
+              <Home item={this.state.saved} onClick={this.handleDelete} />
+            )}
+            />
         </div>
       </Router>
     );

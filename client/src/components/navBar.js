@@ -45,6 +45,11 @@ class AppNavbar extends Component {
                     Favourite
                   </NavLink>
                 </NavItem>
+                <NavItem>
+                  <NavLink href="/login" id="HomeBtn">
+                    Login
+                  </NavLink>
+                </NavItem>
               </Nav>
             </Collapse>
           </Container>
