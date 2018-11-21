@@ -10,7 +10,7 @@ import Rating from 'react-star-ratings';
 const SavedItems= props => {
   function handleDelete() {
     props.onClick({
-      title:props.url.title
+      title:props.item.title
     });
   }
 
@@ -18,17 +18,17 @@ const SavedItems= props => {
     
         <Col xs="6">
     <Card id="size">
-    <CardImg top width="100%" src={props.url.image} alt={props.url.title} />
+    <CardImg top width="100%" src={props.item.image} alt={props.item.title} />
   <CardBody id="CardBody">
-    <CardTitle id="gametitle">{props.url.title}</CardTitle>
+    <CardTitle id="gametitle">{props.item.title}</CardTitle>
     {/* <CardSubtitle id="Link">{props.url.link}</CardSubtitle> */}
-    <CardText id="ReleaseDate"> Release Date: {props.url.releaseDate}</CardText>
-    <CardText id="OriginalPrice"> Original Price: ${props.url.originalPrice}</CardText>
-    <Rating id="Rating" rating = {props.url.ratings/20} numberOfStars = {5} starRatedColor = "gold"/>
+    <CardText id="ReleaseDate"> Release Date: {props.item.releaseDate}</CardText>
+    <CardText id="OriginalPrice"> Original Price: ${props.item.originalPrice}</CardText>
+    <Rating id="Rating" rating = {props.item.ratings/20} numberOfStars = {5} starRatedColor = "gold"/>
   </CardBody>
   <CardFooter id="cardfooter">
-    <Button id="save_btn"onClick={handleDelete}>Remove</Button>
-    <Button id="read-btn" href={props.url.link} target="_blank">More Details</Button>
+    <Button id="save_btn"onClick={handleDelete}>Delete</Button>
+    <Button id="read-btn" href={props.item.link} target="_blank">More Details</Button>
   </CardFooter>
   </Card>
   <br/>>
