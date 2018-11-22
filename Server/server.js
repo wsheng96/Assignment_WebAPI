@@ -14,8 +14,6 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const port = 5000;
-
 //Get 3rd Party API
 app.get('/getgame', (req, res) => {
   const URL = 'http://api.crackwatch.com/api/games';
@@ -178,6 +176,7 @@ app.post('/getsavednews/delete', (req, res) => {
 var Users = require('./routes/Users');
 app.use(Users);
 
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Connecting to port ${port}...`);
 });
